@@ -15,13 +15,13 @@ async function getData(category = "anime", search) {
     );
     const data = await response.json();
     console.log(data.results);
-    createCardList(data.results);
+    createCardList(data.results, category);
   } catch (error) {
     console.log(`Something went wrong !! `);
   }
 }
 
-function createCardList(dataList) {
+function createCardList(dataList, category) {
   document.querySelector(".content").innerHTML = `
     <table class="content-table">
       <thead>
@@ -36,7 +36,7 @@ function createCardList(dataList) {
           return `<tr>
             <td><img src="${data.image_url}"></td>
             <td>
-              <a href="${data.url}" class="link">${data.title} </a>
+              <a href="details.html?id=${data.mal_id}&cat=${category}" class="link">${data.title} </a>
               <p>${data.type}</p>
               <p>Score : ${data.score}</p>
               <p>${data.members} members</p>

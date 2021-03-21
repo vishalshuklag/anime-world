@@ -92,8 +92,92 @@ img {
 }
 
 .link:hover {
-  color: #4f46e5;
+  color: #70707a;
 }
 .link:hover::after {
   transform: scaleX(1);
+}
+
+.grid-container {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 1.2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "side-panel main-panel main-panel main-panel"
+    "side-panel alt-panel info-panel stats-panel"
+    "xtra-panel characters-panel characters-panel characters-panel";
+}
+
+.side-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "img-holder"
+    "other-info";
+  grid-area: side-panel;
+}
+
+.img-holder {
+  grid-area: img-holder;
+}
+
+.img-holder img {
+  height: 300px;
+  width: 100px;
+}
+
+.other-info {
+  grid-area: other-info;
+}
+
+.main-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.25fr 0.8fr 1.8fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "title title title"
+    "type-score rank-popular rank-popular"
+    "synopsis synopsis synopsis";
+  grid-area: main-panel;
+}
+
+.title {
+  grid-area: title;
+}
+
+.type-score {
+  grid-area: type-score;
+}
+
+.rank-popular {
+  grid-area: rank-popular;
+}
+
+.synopsis {
+  grid-area: synopsis;
+}
+
+.alt-panel {
+  grid-area: alt-panel;
+}
+
+.info-panel {
+  grid-area: info-panel;
+}
+
+.stats-panel {
+  grid-area: stats-panel;
+}
+
+.characters-panel {
+  grid-area: characters-panel;
+}
+
+.xtra-panel {
+  grid-area: xtra-panel;
 }
